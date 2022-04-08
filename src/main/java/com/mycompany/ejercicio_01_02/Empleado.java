@@ -24,7 +24,7 @@ public class Empleado {
     
     public double calcularBonoHorasExtra (int maximoHorasTrabajadas){
       var retorno = 1000d; 
-        if(this.horasTrabajadas == 100 && this.horasTrabajadas >= maximoHorasTrabajadas ){
+        if(this.horasTrabajadas>maximoHorasTrabajadas ){
             retorno= (this.horasTrabajadas - maximoHorasTrabajadas)* this.costoHora * 2;
         }else{
             retorno = 0;

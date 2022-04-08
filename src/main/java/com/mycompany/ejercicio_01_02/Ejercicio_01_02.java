@@ -56,7 +56,7 @@ public class Ejercicio_01_02 {
           System.out.println("El impuesto a pagar es: "+impuesto2+" USD"); 
           
       ///////////EMPLEADO 3 ////////////
-      System.out.println("/ //// DATOS DEL EMPLEADO 2 /////// ");
+      System.out.println("/ //// DATOS DEL EMPLEADO 3 /////// ");
         var empleado3 = new Empleado();
         empleado3.nombre =" Carlos";
         empleado3.horasTrabajadas = 150;
