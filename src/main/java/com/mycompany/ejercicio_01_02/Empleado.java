@@ -32,27 +32,17 @@ public class Empleado {
       return retorno;
     }
     
-    public double calcularImpuesto(int limite0,int limite1,int limite2,int limite3){
+    public double calcularImpuesto(int limite1,int limite2,int limite3){
         var retorno = 1000d; 
-        var ingresoBasico = this.costoHora * this.horasTrabajadas;
-        
-        if (limite0==0 && limite1 <= 500){
-            retorno= ingresoBasico * 0;
-        }else{
-            if(limite1==500 && limite2 <= 1000){
-                retorno= ingresoBasico * 0.05;
-            }else{
-                if(limite2==1000 && limite3 <= 2000){
-                    retorno= ingresoBasico * 0.12;
-                }else{
-                    if(limite3 > 2000){
-                        retorno= ingresoBasico * 0.25;
-                    }
-                }
-            }
-            return retorno;
-        }
-        
+        if(this.calcularIngresos(yearIngreso)>=0 && this.calcularIngresos(yearIngreso)<=limite1)
+           retorno=0;
+        if(this.calcularIngresos(yearIngreso)>=limite1 && this.calcularIngresos(yearIngreso)<=limite2)
+           retorno=this.calcularIngresos(yearIngreso)*0.05;
+        if(this.calcularIngresos(yearIngreso)>=limite2 && this.calcularIngresos(yearIngreso)<=limite3)
+           retorno=this.calcularIngresos(yearIngreso)*0.12;
+        if(this.calcularIngresos(yearIngreso)>limite3)
+            retorno=0.25*this.calcularIngresos(yearIngreso);
+        return retorno;   
     }
       
 }
